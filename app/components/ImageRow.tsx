@@ -63,10 +63,10 @@ export default function ImageRow() {
         }}
       >
         {row2.map((image: any) => (
-          <ImageBox image={image} />
+          <ImageBox image={image} key={image.title} />
         ))}
         {row2.map((image: any) => (
-          <ImageBox image={image} />
+          <ImageBox image={image} key={image.title} />
         ))}
       </ImageList>
       <Box
@@ -102,10 +102,10 @@ export default function ImageRow() {
         }}
       >
         {row1.map((image: any) => (
-          <ImageBox image={image} />
+          <ImageBox image={image} key={image.title} />
         ))}
         {row1.map((image: any) => (
-          <ImageBox image={image} />
+          <ImageBox image={image} key={image.title} />
         ))}
       </ImageList>
     </Box>

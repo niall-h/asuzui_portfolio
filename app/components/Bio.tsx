@@ -59,15 +59,15 @@ export default function Bio() {
             textAlign={{ xs: "center", lg: "left" }}
           >
             <Typography gutterBottom variant="body1" color="primary" mb={3}>
-              I’m Ami Suzui, and I’m a student at California State University
-              Fullerton studying Communication-Entertainment and Tourism. I am
-              also in the process of obtaining my Digital Media Certificate. As
-              an event coordinator on campus, I manage various projects,
-              including large scale concerts, night markets, themed nights, and
-              numerous others! I aim to curate impactful events that resonate
-              with the community, fostering a sense of belonging and excitement
-              among participants while leaving a lasting impression on the world
-              around us.
+              I&apos;m Ami Suzui, and I&apos;m a student at California State
+              University Fullerton studying Communication-Entertainment and
+              Tourism. I am also in the process of obtaining my Digital Media
+              Certificate. As an event coordinator on campus, I manage various
+              projects, including large scale concerts, night markets, themed
+              nights, and numerous others! I aim to curate impactful events that
+              resonate with the community, fostering a sense of belonging and
+              excitement among participants while leaving a lasting impression
+              on the world around us.
             </Typography>
             <Typography gutterBottom variant="body1" color="primary" mb={3}>
               I also co-produced an English-learning podcast called Bilingual
@@ -80,12 +80,13 @@ export default function Bio() {
               Japanese audience to learn and understand.
             </Typography>
             <Typography gutterBottom variant="body1" color="primary" mb={3}>
-              Through the courses I've pursued at CSUF, I've engaged in various
-              projects showcasing my proficiency in digital media design,
-              encompassing tasks like brand conceptualization, logo crafting,
-              and mock-up development. Leveraging the Adobe Cloud suite, I've
-              found immense gratification in expressing my creativity,
-              collaborating with clients, and honing my design expertise.
+              Through the courses I&apos;ve pursued at CSUF, I&apos;ve engaged
+              in various projects showcasing my proficiency in digital media
+              design, encompassing tasks like brand conceptualization, logo
+              crafting, and mock-up development. Leveraging the Adobe Cloud
+              suite, I&apos;ve found immense gratification in expressing my
+              creativity, collaborating with clients, and honing my design
+              expertise.
             </Typography>
             <Typography
               gutterBottom
