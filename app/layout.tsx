@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ backgroundColor: "#f0edeb" }}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Navbar />

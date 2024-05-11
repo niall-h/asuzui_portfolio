@@ -5,7 +5,7 @@ import asuzui_logo from "@/public/images/asuzui_logo.svg";
 export default function Name() {
   return (
     <Box
-      height={500}
+      height={400}
       zIndex={-1}
       alignContent="center"
       textAlign="center"
@@ -19,18 +19,20 @@ export default function Name() {
       }}
     >
       <Typography
-        variant="h1"
+        variant="h2"
         style={{ zIndex: 2 }}
         display="flex"
+        flexDirection={{ xs: "column", md: "row" }}
         justifyContent="center"
+        alignItems="center"
       >
         Ami
         <Image
           src={asuzui_logo}
           alt="logo"
-          height={100}
-          width={100}
-          style={{ textAlign: "center", margin: 10 }}
+          height={120}
+          width={120}
+          style={{ textAlign: "center", margin: 13 }}
         />
         Suzui
       </Typography>

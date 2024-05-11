@@ -1,6 +1,7 @@
 "use client";
 
 import { Theme, createTheme, responsiveFontSizes } from "@mui/material";
+import fonts from "@/public/theme/fonts/fonts";
 
 declare module "@mui/material/styles" {
   interface Palette {
@@ -14,9 +15,25 @@ declare module "@mui/material/styles" {
 
 const theme: Theme = createTheme({
   typography: {
+    fontFamily: [
+      fonts.theSeasons.style.fontFamily,
+      fonts.bellMT.style.fontFamily,
+      "Arial",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+    body1: { fontFamily: fonts.bellMT.style.fontFamily },
     button: {
       textTransform: "none",
     },
+    htmlFontSize: 13,
   },
   palette: {
     primary: {

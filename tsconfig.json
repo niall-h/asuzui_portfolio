@@ -17,6 +17,7 @@
         "name": "next"
       }
     ],
+    "types": ["webpack-env"],
     "paths": {
       "@/*": ["./*"]
     }

@@ -3,6 +3,8 @@ import {
   Button,
   ButtonGroup,
   Container,
+  Fade,
+  Slide,
   Toolbar,
   Typography,
 } from "@mui/material";
@@ -11,7 +13,7 @@ import React from "react";
 const NavButton = ({ children }: { children: React.ReactNode }) => {
   return (
     <Button variant="text">
-      <Typography variant="h5" color="secondary">
+      <Typography color="secondary" variant="h6">
         {children}
       </Typography>
     </Button>
