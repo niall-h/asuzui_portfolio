@@ -1,16 +1,32 @@
 "use client";
 
-import { Box, Fade, Grid, IconButton, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Divider,
+  Fade,
+  Grid,
+  IconButton,
+  Typography,
+  typographyClasses,
+} from "@mui/material";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import headshot from "@/public/images/asuzui_profile.jpg";
 import Image from "next/image";
+// @ts-ignore
+import ReactCurvedText from "react-curved-text";
+import fonts from "@/public/theme/fonts/fonts";
 
 export default function Bio() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
+  const [width, setWidth] = useState(0);
+  const [profileHeight, setProfileHeight] = useState(0);
+  const profileRef = useRef<any>(null);
+
   const draw = (context: CanvasRenderingContext2D) => {
-    const height = 700;
+    const height = context.canvas.height;
     const width = context.canvas.width;
 
     context.fillStyle = "#5a6f55";
@@ -23,11 +39,24 @@ export default function Bio() {
   };
 
   useEffect(() => {
+    if (!profileRef.current) return;
+
+    const resizeObserver = new ResizeObserver(() => {
+      setWidth(window.innerWidth);
+      setProfileHeight(profileRef.current.clientHeight);
+    });
+    resizeObserver.observe(profileRef.current);
+    return () => resizeObserver.disconnect(); // clean up
+  }, []);
+
+  useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     canvas.style.width = "100%";
+    canvas.style.height = "100%";
     canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
 
     const context = canvas.getContext("2d");
     if (!context) return;
@@ -36,10 +65,17 @@ export default function Bio() {
   }, []);
 
   return (
-    <Box height={{ lg: 800, md: "inherit" }}>
-      <Box height={{ lg: 700, md: "inherit" }}>
+    <Box height="fit-content" mb={{ md: -24, xs: 3 }} overflow="hidden">
+      <Container maxWidth="xl" sx={{ height: "fit-content" }} disableGutters>
         <Grid container>
-          <Grid item lg={5} position="relative">
+          {/* normal sizes */}
+          <Grid
+            ref={profileRef}
+            item
+            md={5}
+            position="relative"
+            display={{ xl: "none", md: "block", sm: "none" }}
+          >
             <Image
               src={headshot}
               alt="headshot"
@@ -48,16 +84,68 @@ export default function Bio() {
                 borderTopRightRadius: "100%",
                 objectFit: "cover",
                 objectPosition: "center",
+                zIndex: 0,
+              }}
+            />
+            <Box position="absolute" maxHeight="100%">
+              <ReactCurvedText
+                width={width * (5 / 12)}
+                height={profileHeight}
+                cx={0}
+                cy={profileHeight}
+                rx={width * (5 / 12)}
+                ry={profileHeight}
+                startOffset={1300}
+                reversed={true}
+                text="Hello! My name is Ami!"
+                textProps={{
+                  style: {
+                    fontSize: 50,
+                    fontFamily: fonts.theSeasons.style.fontFamily,
+                  },
+                }}
+                textPathProps={{
+                  fill: "#8d7d70",
+                }}
+                tspanProps={{ dy: -20 }}
+                ellipseProps={null}
+                svgProps={null}
+              />
+            </Box>
+          </Grid>
+          {/* huge sizes */}
+          <Grid
+            item
+            md={5}
+            position="relative"
+            display={{ xl: "block", md: "none", sm: "flex" }}
+          >
+            <Image
+              src={headshot}
+              alt="headshot"
+              fill
+              style={{
+                objectFit: "cover",
+                objectPosition: "center",
+                zIndex: 0,
               }}
             />
           </Grid>
           <Grid
             item
-            lg={7}
-            px={{ lg: 10, xs: 3 }}
+            md={7}
+            px={{ md: 10, xs: 3 }}
             zIndex={1}
-            textAlign={{ xs: "center", lg: "left" }}
+            textAlign={{ xs: "center", md: "left" }}
           >
+            <Typography
+              gutterBottom
+              variant="h3"
+              color="primary"
+              display={{ xl: "block", md: "none" }}
+            >
+              Hello! My name is Ami!
+            </Typography>
             <Typography gutterBottom variant="body1" color="primary" mb={3}>
               I&apos;m Ami Suzui, and I&apos;m a student at California State
               University Fullerton studying Communication-Entertainment and
@@ -106,14 +194,41 @@ export default function Bio() {
             </Box>
           </Grid>
         </Grid>
-      </Box>
+      </Container>
       <Box
         position="relative"
-        height={450}
-        top={-350}
-        display={{ xs: "none", lg: "block" }}
+        height={350}
+        top={-180}
+        display={{ xs: "none", md: "flex" }}
       >
-        <canvas ref={canvasRef} height={450} />
+        <canvas ref={canvasRef} height={350} />
+        <Box
+          width="100%"
+          height={350}
+          position="absolute"
+          display={{ md: "flex", xs: "none" }}
+          alignItems="end"
+        >
+          <Container
+            disableGutters
+            maxWidth="xl"
+            sx={{ display: "flex", height: "50%", alignItems: "end" }}
+          >
+            <Divider
+              orientation="vertical"
+              variant="inset"
+              flexItem
+              sx={{
+                ml: 20,
+                borderRightWidth: 4,
+                borderColor: "bg.main",
+              }}
+            />
+            <Typography variant="h3" color="bg.main" ml={5}>
+              Projects
+            </Typography>
+          </Container>
+        </Box>
       </Box>
     </Box>
   );

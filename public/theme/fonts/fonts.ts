@@ -25,24 +25,4 @@ const theSeasons = localFont({
   ],
 });
 
-const bellMT = localFont({
-  src: [
-    {
-      path: "./bell-mt/Bell MT Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "./bell-mt/Bell MT bold.ttf",
-      weight: "700",
-      style: "bold",
-    },
-    {
-      path: "./bell-mt/Bell MT Italic.ttf",
-      weight: "400",
-      style: "italic",
-    },
-  ],
-});
-
-export default { bellMT, theSeasons };
+export default { theSeasons };

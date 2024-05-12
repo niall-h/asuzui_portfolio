@@ -3,16 +3,16 @@ import Bio from "./components/Bio";
 import ImageRow from "./components/ImageRow";
 import Name from "./components/Name";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 export default function Home() {
   return (
     <>
       <Name />
-      <Container maxWidth="xl" disableGutters>
-        <ImageRow />
-        <Bio />
-        <Projects />
-      </Container>
+      <ImageRow />
+      <Bio />
+      <Projects />
+      <Contact />
     </>
   );
 }

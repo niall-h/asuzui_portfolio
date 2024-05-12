@@ -51,53 +51,32 @@ export default function ImageRow() {
   `;
 
   return (
-    <Box width="inherit" overflow="hidden">
-      <ImageList
-        cols={12}
-        gap={30}
-        rowHeight="auto"
-        sx={{
-          width: "fit-content",
-          mt: 10,
-          animation: `${scrollLeft} 40s linear infinite`,
-        }}
-      >
-        {row2.map((image: any) => (
-          <ImageBox image={image} key={image.title} />
-        ))}
-        {row2.map((image: any) => (
-          <ImageBox image={image} key={image.title} />
-        ))}
-      </ImageList>
-      <Box
-        width="inherit"
-        overflow="hidden"
-        zIndex={2}
-        top="60%"
-        position="absolute"
-      >
+    <Box width="inherit" overflow="hidden" my={10}>
+      <Box maxWidth="100vw" height={0} zIndex={2} position="relative">
         <Typography
           minWidth="fit-content"
           noWrap
           variant="h2"
           color="white"
+          paddingTop={3}
           sx={{
-            animation: `${scrollRight} 60s linear infinite`,
+            animation: `${scrollRight} 120s linear infinite`,
+            zIndex: 4,
           }}
         >
           Welcome to my website Welcome to my website Welcome to my website
-          Welcome to my website
+          Welcome to my website Welcome to my website Welcome to my website
+          Welcome to my website Welcome to my website Welcome to my website
+          Welcome to my website Welcome to my website Welcome to my website
         </Typography>
       </Box>
-
       <ImageList
-        cols={12}
+        cols={24}
         gap={30}
         rowHeight="auto"
         sx={{
           width: "fit-content",
-          mb: 10,
-          animation: `${scrollRight} 40s linear infinite`,
+          animation: `${scrollLeft} 80s linear infinite`,
           overflow: "hidden",
         }}
       >
@@ -105,6 +84,34 @@ export default function ImageRow() {
           <ImageBox image={image} key={image.title} />
         ))}
         {row1.map((image: any) => (
+          <ImageBox image={image} key={image.title} />
+        ))}
+        {row1.map((image: any) => (
+          <ImageBox image={image} key={image.title} />
+        ))}
+        {row1.map((image: any) => (
+          <ImageBox image={image} key={image.title} />
+        ))}
+      </ImageList>
+      <ImageList
+        cols={24}
+        gap={30}
+        rowHeight="auto"
+        sx={{
+          width: "fit-content",
+          animation: `${scrollRight} 80s linear infinite`,
+        }}
+      >
+        {row2.map((image: any) => (
+          <ImageBox image={image} key={image.title} />
+        ))}
+        {row2.map((image: any) => (
+          <ImageBox image={image} key={image.title} />
+        ))}
+        {row2.map((image: any) => (
+          <ImageBox image={image} key={image.title} />
+        ))}
+        {row2.map((image: any) => (
           <ImageBox image={image} key={image.title} />
         ))}
       </ImageList>

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Icon, Typography } from "@mui/material";
 import Image from "next/image";
 import asuzui_logo from "@/public/images/asuzui_logo.svg";
 
@@ -20,21 +20,21 @@ export default function Name() {
     >
       <Typography
         variant="h2"
-        style={{ zIndex: 2 }}
+        sx={{ zIndex: 2 }}
         display="flex"
-        flexDirection={{ xs: "column", md: "row" }}
         justifyContent="center"
         alignItems="center"
       >
-        Ami
-        <Image
-          src={asuzui_logo}
-          alt="logo"
-          height={120}
-          width={120}
-          style={{ textAlign: "center", margin: 13 }}
-        />
-        Suzui
+        <strong>Ami</strong>
+        <Box mx={{ md: 2, xs: 0 }} position="relative" width={120} height={120}>
+          <Image
+            src={asuzui_logo}
+            alt="logo"
+            fill
+            style={{ textAlign: "center" }}
+          />
+        </Box>
+        <strong>Suzui</strong>
       </Typography>
     </Box>
   );

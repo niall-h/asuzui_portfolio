@@ -11,13 +11,20 @@ declare module "@mui/material/styles" {
   interface PaletteOptions {
     bg?: PaletteOptions["primary"];
   }
+
+  interface Palette {
+    tertiary: Palette["primary"];
+  }
+
+  interface PaletteOptions {
+    tertiary?: PaletteOptions["primary"];
+  }
 }
 
 const theme: Theme = createTheme({
   typography: {
     fontFamily: [
       fonts.theSeasons.style.fontFamily,
-      fonts.bellMT.style.fontFamily,
       "Arial",
       "-apple-system",
       "BlinkMacSystemFont",
@@ -29,7 +36,9 @@ const theme: Theme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(","),
-    body1: { fontFamily: fonts.bellMT.style.fontFamily },
+    body1: {
+      fontFamily: "Times New Roman, serif",
+    },
     button: {
       textTransform: "none",
     },
@@ -42,8 +51,11 @@ const theme: Theme = createTheme({
     secondary: {
       main: "#5a6f55",
     },
-    bg: {
+    tertiary: {
       main: "#edd6c8",
+    },
+    bg: {
+      main: "#f0edeb",
     },
   },
 });
