@@ -12,10 +12,15 @@ import {
 } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import { RefObject } from "react";
 
-export default function Contact() {
+interface ContactProps {
+  contactRef: RefObject<HTMLElement>;
+}
+
+export default function Contact({ contactRef }: ContactProps) {
   return (
-    <Box position="relative">
+    <Box ref={contactRef} position="relative">
       <Divider
         orientation="horizontal"
         sx={{

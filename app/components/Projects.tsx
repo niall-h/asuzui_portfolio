@@ -7,12 +7,14 @@ import {
   Divider,
   Grid,
   Typography,
+  keyframes,
 } from "@mui/material";
+import CircleIcon from "@mui/icons-material/Circle";
 import Image from "next/image";
 import eventGallery from "@/public/images/EventGallery(Photo).jpg";
 import mediaDesign from "@/public/images/Digital Media(Photo).jpeg";
 import podcast from "@/public/images/PODCAST(photo).jpg";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 interface EllipseButtonProps {
   text: string;
@@ -84,6 +86,27 @@ export default function Projects() {
     draw(context);
   }, []);
 
+  const scrollTop = keyframes`
+  0% { transform: rotate(180deg) translateY(0%); }
+	100% { transform: rotate(180deg) translateY(50%)}
+  `;
+
+  const reviewTagline = () => {
+    let tagline = [];
+    for (let i = 0; i < 6; i++) {
+      tagline.push(
+        <span>
+          Projects <CircleIcon sx={{ fontSize: 15 }} /> Podcast{" "}
+          <CircleIcon sx={{ fontSize: 15 }} /> Event Gallery{" "}
+          <CircleIcon sx={{ fontSize: 15 }} /> Media Design{" "}
+          <CircleIcon sx={{ fontSize: 15 }} />{" "}
+        </span>
+      );
+    }
+
+    return tagline;
+  };
+
   return (
     <Box
       bgcolor="secondary.main"
@@ -93,7 +116,11 @@ export default function Projects() {
       <Container
         disableGutters
         maxWidth="xl"
-        sx={{ display: { md: "flex", xs: "block" } }}
+        sx={{
+          display: { md: "flex", xs: "block" },
+          overflow: "hidden",
+          height: "inherit",
+        }}
       >
         <Typography
           variant="h3"
@@ -105,17 +132,35 @@ export default function Projects() {
         >
           Projects
         </Typography>
-        <Divider
-          orientation="vertical"
-          variant="inset"
-          flexItem
-          sx={{
-            ml: 20,
-            borderRightWidth: 4,
-            borderColor: "bg.main",
-            display: { md: "block", xs: "none" },
-          }}
-        />
+        <Box
+          ml={13}
+          display={{ md: "flex", xs: "none" }}
+          position="relative"
+          height="inherit"
+        >
+          <Typography
+            variant="h5"
+            color="bg.main"
+            height="fit-content"
+            noWrap
+            mx={1}
+            sx={{
+              writingMode: "vertical-lr",
+              transform: "rotate(180deg)",
+              animation: `${scrollTop} 40s linear infinite`,
+            }}
+          >
+            {reviewTagline()}
+          </Typography>
+          <Divider
+            orientation="vertical"
+            sx={{
+              borderRightWidth: 4,
+              borderColor: "bg.main",
+            }}
+          />
+        </Box>
+
         <Grid container p={{ md: 10, xs: 4 }} rowSpacing={{ md: 0, xs: 5 }}>
           <Grid item md={5}></Grid>
           <Grid item md={7} xs={12}>

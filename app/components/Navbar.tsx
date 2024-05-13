@@ -6,11 +6,30 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { RefObject, useRef } from "react";
 
-const NavButton = ({ children }: { children: React.ReactNode }) => {
+interface NavButtonProps {
+  href?: string;
+  handleClick?: () => void;
+  children: React.ReactNode;
+}
+
+interface NavbarProps {
+  contactRef: RefObject<HTMLElement>;
+}
+
+const NavButton = ({ href, handleClick, children }: NavButtonProps) => {
+  if (href) {
+    return (
+      <Button variant="text" href={href}>
+        <Typography color="secondary" variant="h6">
+          {children}
+        </Typography>
+      </Button>
+    );
+  }
   return (
-    <Button variant="text">
+    <Button variant="text" onClick={handleClick}>
       <Typography color="secondary" variant="h6">
         {children}
       </Typography>
@@ -18,7 +37,7 @@ const NavButton = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default function Navbar() {
+export default function Navbar({ contactRef }: NavbarProps) {
   return (
     <AppBar
       position="absolute"
@@ -27,7 +46,13 @@ export default function Navbar() {
       <Container maxWidth="lg">
         <Toolbar>
           <ButtonGroup fullWidth disableRipple>
-            <NavButton>Contact</NavButton>
+            <NavButton
+              handleClick={() => {
+                contactRef.current?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Contact
+            </NavButton>
             <NavButton>Event Gallery</NavButton>
             <NavButton>Bilingual Buzz</NavButton>
             <NavButton>Digital Media</NavButton>

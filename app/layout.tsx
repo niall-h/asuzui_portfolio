@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Navbar from "./components/Navbar";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "@/public/theme/theme";
 
@@ -18,7 +17,6 @@ export default function RootLayout({
       <body style={{ backgroundColor: "#f0edeb" }}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
-          <Navbar />
           {children}
         </ThemeProvider>
       </body>

@@ -64,10 +64,7 @@ export default function ImageRow() {
             zIndex: 4,
           }}
         >
-          Welcome to my website Welcome to my website Welcome to my website
-          Welcome to my website Welcome to my website Welcome to my website
-          Welcome to my website Welcome to my website Welcome to my website
-          Welcome to my website Welcome to my website Welcome to my website
+          {`Welcome to my website `.repeat(8)}
         </Typography>
       </Box>
       <ImageList
