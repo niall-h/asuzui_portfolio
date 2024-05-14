@@ -2,15 +2,20 @@ import {
   AppBar,
   Button,
   ButtonGroup,
+  ButtonProps,
   Container,
+  SxProps,
   Toolbar,
   Typography,
+  TypographyProps,
 } from "@mui/material";
 import React, { RefObject, useRef } from "react";
 
 interface NavButtonProps {
   href?: string;
   handleClick?: () => void;
+  buttonProps?: ButtonProps;
+  typographyProps?: TypographyProps;
   children: React.ReactNode;
 }
 
@@ -18,19 +23,25 @@ interface NavbarProps {
   contactRef: RefObject<HTMLElement>;
 }
 
-const NavButton = ({ href, handleClick, children }: NavButtonProps) => {
+export const NavButton = ({
+  href,
+  handleClick,
+  buttonProps,
+  typographyProps,
+  children,
+}: NavButtonProps) => {
   if (href) {
     return (
-      <Button variant="text" href={href}>
-        <Typography color="secondary" variant="h6">
+      <Button variant="text" href={href} {...buttonProps}>
+        <Typography color="secondary" variant="h6" {...typographyProps}>
           {children}
         </Typography>
       </Button>
     );
   }
   return (
-    <Button variant="text" onClick={handleClick}>
-      <Typography color="secondary" variant="h6">
+    <Button variant="text" href={href} {...buttonProps}>
+      <Typography color="secondary" variant="h6" {...typographyProps}>
         {children}
       </Typography>
     </Button>
@@ -54,8 +65,8 @@ export default function Navbar({ contactRef }: NavbarProps) {
               Contact
             </NavButton>
             <NavButton>Event Gallery</NavButton>
-            <NavButton>Bilingual Buzz</NavButton>
-            <NavButton>Digital Media</NavButton>
+            <NavButton href="/bilingual-buzz">Bilingual Buzz</NavButton>
+            <NavButton href="/digital-media">Digital Media</NavButton>
           </ButtonGroup>
         </Toolbar>
       </Container>

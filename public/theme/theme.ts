@@ -19,6 +19,14 @@ declare module "@mui/material/styles" {
   interface PaletteOptions {
     tertiary?: PaletteOptions["primary"];
   }
+
+  interface Palette {
+    bb: Palette["primary"];
+  }
+
+  interface PaletteOptions {
+    bb?: PaletteOptions["primary"];
+  }
 }
 
 const theme: Theme = createTheme({
@@ -39,6 +47,9 @@ const theme: Theme = createTheme({
     body1: {
       fontFamily: "Times New Roman, serif",
     },
+    h6: {
+      fontFamily: "Times New Roman, serif",
+    },
     button: {
       textTransform: "none",
     },
@@ -56,6 +67,9 @@ const theme: Theme = createTheme({
     },
     bg: {
       main: "#f0edeb",
+    },
+    bb: {
+      main: "#A4C0CA",
     },
   },
 });
