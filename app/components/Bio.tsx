@@ -8,11 +8,10 @@ import {
   Grid,
   IconButton,
   Typography,
-  typographyClasses,
 } from "@mui/material";
 import ExpandCircleDownIcon from "@mui/icons-material/ExpandCircleDown";
-import { useCallback, useEffect, useRef, useState } from "react";
-import headshot from "@/public/images/asuzui_profile.jpg";
+import { useEffect, useRef, useState } from "react";
+import headshot from "@/public/assets/asuzui_profile.jpg";
 import Image from "next/image";
 // @ts-ignore
 import ReactCurvedText from "react-curved-text";

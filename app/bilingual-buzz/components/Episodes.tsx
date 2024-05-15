@@ -53,7 +53,7 @@ export default function Episodes() {
         <Box px={{ md: 10, xs: 2 }} position="relative">
           <Grid container spacing={5}>
             {EPISODES.map((episode: Episode) => (
-              <Grid item md={6}>
+              <Grid key={episode.number} item md={6}>
                 <Card
                   sx={{
                     height: { md: 300, xs: 200 },
@@ -71,7 +71,11 @@ export default function Episodes() {
                   }}
                 >
                   <CardActionArea
-                    sx={{ height: "100%", p: 10, alignContent: "center" }}
+                    sx={{
+                      height: "100%",
+                      p: { md: 10, xs: 2 },
+                      alignContent: "center",
+                    }}
                     href={episode.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -119,7 +123,7 @@ export default function Episodes() {
                 },
               }}
             >
-              <Typography variant="h5" fontWeight={700}>
+              <Typography variant="h5" fontWeight={700} textAlign="center">
                 Click here for more episodes
               </Typography>
             </Button>

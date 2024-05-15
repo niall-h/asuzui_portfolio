@@ -10,7 +10,7 @@ import Link from "next/link";
 import Image from "next/image";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import bbPicture from "@/public/images/bb/Photo1.jpg";
+import bbPicture from "@/public/assets/bb/Photo1.jpg";
 
 export default function Info() {
   return (

@@ -1,6 +1,5 @@
 "use client";
 
-import { Container } from "@mui/material";
 import Bio from "./components/Bio";
 import ImageRow from "./components/ImageRow";
 import Name from "./components/Name";

@@ -11,9 +11,9 @@ import {
 } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
 import Image from "next/image";
-import eventGallery from "@/public/images/EventGallery(Photo).jpg";
-import mediaDesign from "@/public/images/Digital Media(Photo).jpeg";
-import podcast from "@/public/images/PODCAST(photo).jpg";
+import eventGallery from "@/public/assets/EventGallery(Photo).jpg";
+import mediaDesign from "@/public/assets/Digital Media(Photo).jpeg";
+import podcast from "@/public/assets/PODCAST(photo).jpg";
 import { useEffect, useRef } from "react";
 
 interface EllipseButtonProps {

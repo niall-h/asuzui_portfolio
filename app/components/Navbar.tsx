@@ -4,12 +4,11 @@ import {
   ButtonGroup,
   ButtonProps,
   Container,
-  SxProps,
   Toolbar,
   Typography,
   TypographyProps,
 } from "@mui/material";
-import React, { RefObject, useRef } from "react";
+import React, { RefObject } from "react";
 
 interface NavButtonProps {
   href?: string;
@@ -25,7 +24,6 @@ interface NavbarProps {
 
 export const NavButton = ({
   href,
-  handleClick,
   buttonProps,
   typographyProps,
   children,
@@ -58,8 +56,10 @@ export default function Navbar({ contactRef }: NavbarProps) {
         <Toolbar>
           <ButtonGroup fullWidth disableRipple>
             <NavButton
-              handleClick={() => {
-                contactRef.current?.scrollIntoView({ behavior: "smooth" });
+              buttonProps={{
+                onClick: () => {
+                  contactRef.current?.scrollIntoView({ behavior: "smooth" });
+                },
               }}
             >
               Contact

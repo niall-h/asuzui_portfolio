@@ -1,6 +1,6 @@
 import { Box, Icon, Typography } from "@mui/material";
 import Image from "next/image";
-import asuzui_logo from "@/public/images/asuzui_logo.svg";
+import asuzui_logo from "@/public/assets/asuzui_logo.svg";
 
 export default function Name() {
   return (
@@ -10,7 +10,7 @@ export default function Name() {
       alignContent="center"
       textAlign="center"
       sx={{
-        backgroundImage: "url('/images/ocean_bg.png')",
+        backgroundImage: "url('/assets/ocean_bg.png')",
         backgroundColor: "rgba(255, 255, 255, 0.5)",
         backgroundBlendMode: "lighten",
         backgroundPosition: "50% 47%",

@@ -54,7 +54,7 @@ export default function BilingualBuzz() {
           </NavButton>
           <video
             width="100%"
-            src={"/images/bb/Video1.mp4"}
+            src={"/assets/bb/Video1.mp4"}
             autoPlay
             loop
             preload="auto"

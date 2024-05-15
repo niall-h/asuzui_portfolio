@@ -3,12 +3,10 @@
 import {
   Box,
   Button,
-  ButtonGroup,
   Container,
   Divider,
   Grid,
   Typography,
-  typographyClasses,
 } from "@mui/material";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";

@@ -13,8 +13,8 @@ interface ImageBoxProps {
   image: any;
 }
 
-const images_row1 = require.context("../../public/images/carousel/row1", true);
-const images_row2 = require.context("../../public/images/carousel/row2", true);
+const images_row1 = require.context("../../public/assets/carousel/row1", true);
+const images_row2 = require.context("../../public/assets/carousel/row2", true);
 const row1 = images_row1
   .keys()
   .map((image: any) => ({ img: images_row1(image), title: image }));
@@ -35,7 +35,7 @@ const ImageBox = ({ image }: ImageBoxProps) => (
       },
     }}
   >
-    <Image src={image.img} alt={image.title} height={300} />
+    <Image src={image.img} alt={image.title} height={300} priority={true} />
   </ImageListItem>
 );
 
@@ -96,7 +96,7 @@ export default function ImageRow() {
         rowHeight="auto"
         sx={{
           width: "fit-content",
-          animation: `${scrollRight} 80s linear infinite`,
+          animation: `${scrollRight} 40s linear infinite`,
         }}
       >
         {row2.map((image: any) => (
