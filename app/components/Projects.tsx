@@ -17,13 +17,15 @@ import podcast from "@/public/assets/PODCAST(photo).jpg";
 import { useEffect, useRef } from "react";
 
 interface EllipseButtonProps {
+  href: string;
   text: string;
   image: any;
 }
 
-const EllipseButton = ({ text, image }: EllipseButtonProps) => {
+const EllipseButton = ({ href, text, image }: EllipseButtonProps) => {
   return (
     <ButtonBase
+      href={href}
       sx={{
         height: { md: 500, xs: 250 },
         width: "100%",
@@ -164,15 +166,27 @@ export default function Projects() {
         <Grid container p={{ md: 10, xs: 4 }} rowSpacing={{ md: 0, xs: 5 }}>
           <Grid item md={5}></Grid>
           <Grid item md={7} xs={12}>
-            <EllipseButton text="Event Gallery" image={eventGallery} />
+            <EllipseButton
+              href="https://amiksuzui9207.wixsite.com/asuzui-eventgallery"
+              text="Event Gallery"
+              image={eventGallery}
+            />
           </Grid>
           <Grid item md={7} xs={12}>
-            <EllipseButton text="Podcast" image={podcast} />
+            <EllipseButton
+              href="/bilingual-buzz"
+              text="Podcast"
+              image={podcast}
+            />
           </Grid>
           <Grid item md={5}></Grid>
           <Grid item md={5}></Grid>
           <Grid item md={7} xs={12}>
-            <EllipseButton text="Media Design" image={mediaDesign} />
+            <EllipseButton
+              href="/digital-media"
+              text="Media Design"
+              image={mediaDesign}
+            />
           </Grid>
         </Grid>
       </Container>

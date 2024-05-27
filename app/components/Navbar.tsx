@@ -64,7 +64,9 @@ export default function Navbar({ contactRef }: NavbarProps) {
             >
               Contact
             </NavButton>
-            <NavButton>Event Gallery</NavButton>
+            <NavButton href="https://amiksuzui9207.wixsite.com/asuzui-eventgallery">
+              Event Gallery
+            </NavButton>
             <NavButton href="/bilingual-buzz">Bilingual Buzz</NavButton>
             <NavButton href="/digital-media">Digital Media</NavButton>
           </ButtonGroup>
