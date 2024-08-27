@@ -146,34 +146,33 @@ export default function Bio() {
               Hello! My name is Ami!
             </Typography>
             <Typography gutterBottom variant="body1" color="primary" mb={3}>
-              I&apos;m Ami Suzui, and I&apos;m a student at California State
-              University Fullerton studying Communication-Entertainment and
-              Tourism. I am also in the process of obtaining my Digital Media
-              Certificate. As an event coordinator on campus, I manage various
-              projects, including large scale concerts, night markets, themed
-              nights, and numerous others! I aim to curate impactful events that
-              resonate with the community, fostering a sense of belonging and
-              excitement among participants while leaving a lasting impression
-              on the world around us.
+              I graduated from California State University, Fullerton, with a
+              Bachelor&apos;s Degree in Communication, specializing in
+              Entertainment and Tourism, and hold a certificate in digital
+              media. During my time on campus, I served as an event coordinator,
+              managing a variety of projects, including large-scale concerts,
+              night markets, themed nights, and more! My goal is to curate
+              impactful events that resonate with the community, fostering a
+              sense of belonging and excitement among participants while leaving
+              a lasting impression on the world.
             </Typography>
             <Typography gutterBottom variant="body1" color="primary" mb={3}>
-              I also co-produced an English-learning podcast called Bilingual
-              Buzz. Coming from a background enriched by Japanese and American
-              cultures, I initiated this podcast to raise awareness and explore
-              cultural nuances and disparities. Through personal experiences,
-              observations, and discussions with my best friends, who also
-              co-produced the platform, we aim to convey these insights in easy
-              conversational English phrases, making it accessible for our
-              Japanese audience to learn and understand.
+              Additionally, I co-produced an English-learning podcast called
+              Bilingual Buzz. With a background enriched by Japanese and
+              American cultures, I launched this podcast to explore cultural
+              nuances and raise awareness of the differences between them.
+              Through personal experiences, observations, and discussions with
+              my best friends, who co-produced the platform, we share these
+              insights using easy, conversational English phrases, making it
+              accessible for our Japanese audience to learn and understand.
             </Typography>
             <Typography gutterBottom variant="body1" color="primary" mb={3}>
-              Through the courses I&apos;ve pursued at CSUF, I&apos;ve engaged
-              in various projects showcasing my proficiency in digital media
-              design, encompassing tasks like brand conceptualization, logo
-              crafting, and mock-up development. Leveraging the Adobe Cloud
-              suite, I&apos;ve found immense gratification in expressing my
-              creativity, collaborating with clients, and honing my design
-              expertise.
+              Through my courses at CSUF, I&apos;ve undertaken various projects
+              that showcase my proficiency in digital media design, including
+              brand conceptualization, logo creation, and mock-up development.
+              Using the Adobe Cloud suite, I&apos;ve enjoyed expressing my
+              creativity, collaborating with clients, and refining my design
+              skills.
             </Typography>
             <Typography
               gutterBottom
